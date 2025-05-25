@@ -1,0 +1,22 @@
+export class DebuffManager {
+    #debufs: string[];
+    #maxSize: number;
+    constructor(maxSize: number = Number.MAX_SAFE_INTEGER) {
+        this.#debufs = [];
+        this.#maxSize = maxSize;
+    }
+    debuffed(a: URL): boolean{
+        let q = a.searchParams.get("debuff");
+        if(q === null){
+            return true;
+        }
+        if(this.#debufs.includes(q)){
+            return true;
+        }
+        this.#debufs.push(q);
+        if(this.#debufs.length > this.#maxSize){
+            this.#debufs.shift();
+        }
+        return false;
+    }
+}
