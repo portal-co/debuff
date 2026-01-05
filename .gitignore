@@ -1,12 +1,9 @@
-node_modules
 
-# Added by cargo
-
+.DS_Store
 /target
-
-
-# Added by cargo
 #
+# Added by cargo
 # already existing elements were commented out
-
 #/target
+node_modules
+target
